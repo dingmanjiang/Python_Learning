@@ -1,2 +1,3 @@
-# Python_Learning
-My Classroom of Python
+# My Classroom of Python
+
+《Core Python Applications Programming(Third Edition)》
