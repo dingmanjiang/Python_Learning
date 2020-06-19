@@ -21,10 +21,15 @@ while True:
     print('...connected from:', addr)
 
     while True:
-        data = tcpCliSock.recv(BUFSIZ)
+        data_b = tcpCliSock.recv(BUFSIZ)
+        data = data_b.decode()
+        print(data,type(data))
         if not data:
             break
-        tcpCliSock.send('[%s] %s' %(bytes(ctime(), 'utf-8'), data))
+        data = '[%s] %s' %(ctime(), data)
+        print(data, type(data))
+        data_b = data.encode(encoding='utf-8')
+        tcpCliSock.send(data_b)
 
     tcpCliSock.close()
 
