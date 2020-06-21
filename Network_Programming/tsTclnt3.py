@@ -22,8 +22,9 @@ while True:
     print(data_s + ' is a ', type(data))
     tcpCliSock.send(data)                   # socket.sent必须发送bytes对象
     data = tcpCliSock.recv(BUFSIZ)
-    if not data:
+    data_s = data.decode()
+    if not data_s:
         break
-    print(data)
+    print(data_s)
 
 tcpCliSock.close()
