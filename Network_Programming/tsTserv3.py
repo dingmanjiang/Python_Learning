@@ -21,15 +21,15 @@ while True:
     print('...connected from:', addr)
 
     while True:
-        data_b = tcpCliSock.recv(BUFSIZ)
-        data = data_b.decode()
+        data_b = tcpCliSock.recv(BUFSIZ)    #收到的是bytes
+        data = data_b.decode()              #解码成string
         print(data,type(data))
         if not data:
             break
         data = '[%s] %s' %(ctime(), data)
         print(data, type(data))
-        data_b = data.encode(encoding='utf-8')
-        tcpCliSock.send(data_b)
+        data_b = data.encode(encoding='utf-8')  #将string编码成bytes
+        tcpCliSock.send(data_b)                 #socket.send必须是bytes对象
 
     tcpCliSock.close()
 

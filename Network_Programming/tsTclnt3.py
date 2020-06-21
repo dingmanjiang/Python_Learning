@@ -5,7 +5,8 @@
 
 from socket import *
 
-HOST = '192.168.56.1'
+# get host ip address
+HOST = input('Please input your server IP address: ')
 PORT = 21567
 BUFSIZ = 1024
 ADDR = (HOST, PORT)
@@ -15,11 +16,11 @@ tcpCliSock.connect(ADDR)
 
 while True:
     data_s = input('> ')
-    data = data_s.encode(encoding='utf-8')
+    data = data_s.encode(encoding='utf-8')  # 将string编码成bytes
     if not data:
         break
     print(data_s + ' is a ', type(data))
-    tcpCliSock.send(data)
+    tcpCliSock.send(data)                   # socket.sent必须发送bytes对象
     data = tcpCliSock.recv(BUFSIZ)
     if not data:
         break
