@@ -33,5 +33,6 @@ while True:
 
     tcpCliSock.close()
 
+# todo 关于套接字的关闭，可以采用try方式进行一种优雅的或智能的关闭，这也是目前这个程序没有完善的地方
 tcpSerSock.close()
 
