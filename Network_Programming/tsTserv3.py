@@ -13,7 +13,7 @@ ADDR = (HOST, PORT)
 
 tcpSerSock = socket(AF_INET, SOCK_STREAM)
 tcpSerSock.bind(ADDR)
-tcpSerSock.listen(5)
+tcpSerSock.listen(0)
 
 while True:
     print('waiting for connection...')
