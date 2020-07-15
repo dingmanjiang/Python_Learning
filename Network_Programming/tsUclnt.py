@@ -7,7 +7,14 @@ from socket import *
 
 # get host ip address
 HOST = input('Please input your server IP address: ')
-PORT = 21568
+if HOST == '':
+    HOST = 'localhost'
+
+PORT_str = input('Please input your server port: ')
+if PORT_str == '':
+    PORT_str = '21568'
+PORT = int(PORT_str)
+
 BUFSIZ = 1024
 ADDR = (HOST, PORT)
 

@@ -12,7 +12,14 @@ from socket import *
 # todo 有空可以把这两个方式都写出来
 try:
     HOST = input('Please input your server IP address: ')
-    PORT = 21567
+    if HOST == '':
+        HOST = 'localhost'
+
+    PORT_str = input('Please input your server port: ')
+    if PORT_str == '':
+        PORT_str = '21567'
+    PORT = int(PORT_str)
+
     BUFSIZ = 1024
     ADDR = (HOST, PORT)
 
