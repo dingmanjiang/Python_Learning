@@ -13,7 +13,7 @@ from socket import *
 try:
     HOST = input('Please input your server IP address: ')
     if HOST == '':
-        HOST = 'localhost'
+        HOST = 'localHOST'
 
     PORT_str = input('Please input your server port: ')
     if PORT_str == '':

@@ -4,6 +4,7 @@ import re
 
 # -----------------------------------------------------------------------------
 # 								常用的正则表达式
+#                           creat by Ding Manjiang
 # -----------------------------------------------------------------------------
 # 使用方法：
 # 1、所有变量都以re作为前缀，每个子类下以下划线分割
@@ -32,20 +33,20 @@ rege_phone_ChineseMobile = r'''(?x)						#多行注释模式
 rege_net_UrlProtocol = r'(https?|ftp):\/\/' #判断http://、https://、ftp://
 
 
+print(re.findall('\\\\', 'a*b+c?\\d123d\\'))
 
-text = '+86-131-5261-4238 13152613238 132998398234'
-#pattern = re.compile(rege_phone_ChineseMobile)
-#print(pattern.search(text))
-#print(pattern.match(text))
-#print(pattern.findall(text))
-match = re.search(rege_phone_ChineseMobile,text)
-if match:
-    print(match.group(0))
 
-matchfindall = re.findall(rege_phone_ChineseMobile,text)
-if match:
-    print(matchfindall)
 
-for m in re.finditer(rege_phone_ChineseMobile, text):
-    if m:
-        print(m.group(0))
+#text = '+86-131-5261-4238 13152613238 132998398234'
+# match = re.search(rege_phone_ChineseMobile,text)
+# if match:
+#     print(match.group(0))
+
+# matchfindall = re.findall(rege_phone_ChineseMobile,text)
+# if match:
+#     print(matchfindall)
+
+# for m in re.finditer(rege_phone_ChineseMobile, text):
+#     if m:
+#         print(m.group(0))
+
