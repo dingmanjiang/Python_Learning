@@ -27,7 +27,8 @@ try:
     tcpCliSock.connect(ADDR)
 except Exception as connect_error:
     print(connect_error)
-    print('The server does not exist or the IP address of the server is wrong!')
+    print
+    ('The server does not exist or the IP address of the server is wrong!')
     HOST = input('Please input your server IP address again: ')
     ADDR = (HOST, PORT)
     tcpCliSock.connect(ADDR)
