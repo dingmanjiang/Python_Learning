@@ -22,23 +22,47 @@ def open_url(url):
 
     return html
 # --------------------------------------------------------------------------------
-
 # --------------------------------------------------------------------------------
-def get_title(url_request):
+def get_bs_object(url_request):
     """
-    This function is to get the title of url
+    This function is to get the bs4 object of url
     :param url_request: the object of target url address
-    :return: when it get the title, it will return the title string. otherwise, return None.
+    :return: when it get the object, it will return it and otherwise, it will return None.
     """
 
     # try to get title
     try:
         bs = BeautifulSoup(url_request.read(), 'html.parser')
-        title_str = bs.body.h1
     except AttributeError:
         return None
 
-    return title_str
+    return bs
+# --------------------------------------------------------------------------------
+
+# --------------------------------------------------------------------------------
+def open_get_bs(url):
+    """
+    This function is to get the object of bs4 BeautifulSoup.
+    :param url: the target url address
+    :return: when it get the object, it will return it and otherwise, it will return None.
+    """
+
+    # try to open url
+    try:
+        html = urlopen(url, timeout=30)
+    except HTTPError:
+        print('can not connect to the web')
+        return None
+
+    # try to get the web html string
+    try:
+        bs = BeautifulSoup(html.read(), 'html.parser')
+    except AttributeError:
+        print('can not parse the request object')
+        return None
+
+    # print(bs)
+    return bs
 # --------------------------------------------------------------------------------
 
 # --------------------------------------------------------------------------------
