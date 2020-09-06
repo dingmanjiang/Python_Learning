@@ -1,9 +1,12 @@
 from typing import List
+from itertools import accumulate
 
 class Solution:
     def runningSum(self, nums: List[int]) -> List[int]:
-        from itertools import accumulate
-        return accumulate(nums)
+        print("Input: nums = ", nums)
+        output = list(accumulate(nums))
+        print("Output: ", output)
+        return output
 
 example = Solution()
 outlist = example.runningSum([1, 2, 3, 4])

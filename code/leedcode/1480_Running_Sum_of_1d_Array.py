@@ -2,33 +2,16 @@ from typing import List
 
 class Solution:
     def runningSum(self, nums: List[int]) -> List[int]:
+
         print("Input: nums = ", nums)
 
         output = [nums[0]]
-        # explanation = []
-        # i = 0
-        i_max = len(nums)
 
-        # for a in range(i_max):
-        #     explanation.append(str(nums[0]))
-
-        for i in range(1, i_max):
-            output.append(output[i-1]+nums[i])
-            # for j in range(i, i_max):
-            #     if nums[i]<0:
-            #         explanation[j] = explanation[j] + str(nums[i])
-            #     else:
-            #         explanation[j] = explanation[j]+'+'+str(nums[i])
+        for i in range(1, len(nums)):
+            output.append(output[-1]+nums[i])
 
         print("Output: ", output)
 
-        # outstr = ''
-        # for i in range(i_max):
-        #     if i != i_max-1:
-        #         outstr = outstr + explanation[i] + ', '
-        #     else:
-        #         outstr = outstr + explanation[i]
-        # print("Explanation: Running sum is obtained as follows: [", outstr, '].')
         return output
 
 
